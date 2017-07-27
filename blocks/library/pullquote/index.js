@@ -33,6 +33,10 @@ registerBlockType( 'core/pullquote', {
 		citation: children( 'footer' ),
 	},
 
+	defaultAttributes: {
+		align: 'none',
+	},
+
 	getEditWrapperProps( attributes ) {
 		const { align } = attributes;
 		if ( 'left' === align || 'right' === align || 'wide' === align || 'full' === align ) {
@@ -86,7 +90,7 @@ registerBlockType( 'core/pullquote', {
 	},
 
 	save( { attributes } ) {
-		const { value, citation, align = 'none' } = attributes;
+		const { value, citation, align } = attributes;
 
 		return (
 			<blockquote className={ `align${ align }` }>
