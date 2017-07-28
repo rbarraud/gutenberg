@@ -16,22 +16,22 @@ import { getBeautifulContent, getSaveContent } from './serializer';
  * Returns the block attributes parsed from raw content.
  *
  * @param  {String} rawContent    Raw block content
- * @param  {Object} attributes    Block attribute matchers
+ * @param  {Object} attributes    Block attribute sources
  * @return {Object}               Block attributes
  */
 export function parseBlockAttributes( rawContent, attributes ) {
 	if ( 'function' === typeof attributes ) {
 		return attributes( rawContent );
 	} else if ( attributes ) {
-		// Matchers are implemented as functions that receive a DOM node from
+		// Sources are implemented as functions that receive a DOM node from
 		// which to select data. Use of the DOM is incidental and we shouldn't
 		// guarantee a contract that this be provided, else block implementers
-		// may feel compelled to use the node. Instead, matchers are intended
+		// may feel compelled to use the node. Instead, sources are intended
 		// as a generic interface to query data from any tree shape. Here we
-		// pick only matchers which include an internal flag.
-		const knownMatchers = pickBy( attributes, '_wpBlocksKnownMatcher' );
+		// pick only sources which include an internal flag.
+		const knownSources = pickBy( attributes, '_wpBlocksKnownSource' );
 
-		return hpqParse( rawContent, knownMatchers );
+		return hpqParse( rawContent, knownSources );
 	}
 
 	return {};

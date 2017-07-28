@@ -14,14 +14,14 @@ import { IconButton } from 'components';
  */
 import './style.scss';
 import './block.scss';
-import { registerBlockType, query } from '../../api';
+import { registerBlockType, source } from '../../api';
 import Editable from '../../editable';
 import UrlInput from '../../url-input';
 import BlockControls from '../../block-controls';
 import BlockAlignmentToolbar from '../../block-alignment-toolbar';
 import InspectorControls from '../../inspector-controls';
 
-const { attr, children } = query;
+const { attr, children } = source;
 
 registerBlockType( 'core/button', {
 	title: __( 'Button' ),

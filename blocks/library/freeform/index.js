@@ -7,10 +7,10 @@ import { __ } from 'i18n';
  * Internal dependencies
  */
 import './style.scss';
-import { registerBlockType, query, setUnknownTypeHandler } from '../../api';
+import { registerBlockType, source, setUnknownTypeHandler } from '../../api';
 import OldEditor from './old-editor';
 
-const { prop } = query;
+const { prop } = source;
 
 registerBlockType( 'core/freeform', {
 	title: __( 'Classic Text' ),

@@ -15,12 +15,12 @@ import { Button, Placeholder, Spinner, SandBox } from 'components';
  * Internal dependencies
  */
 import './style.scss';
-import { registerBlockType, query } from '../../api';
+import { registerBlockType, source } from '../../api';
 import Editable from '../../editable';
 import BlockControls from '../../block-controls';
 import BlockAlignmentToolbar from '../../block-alignment-toolbar';
 
-const { attr, children } = query;
+const { attr, children } = source;
 
 // These embeds do not work in sandboxes
 const HOSTS_NO_PREVIEWS = [ 'facebook.com' ];

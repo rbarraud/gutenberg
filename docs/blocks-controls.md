@@ -18,7 +18,7 @@ var el = wp.element.createElement,
 	Editable = wp.blocks.Editable,
 	BlockControls = wp.blocks.BlockControls,
 	AlignmentToolbar = wp.blocks.AlignmentToolbar,
-	children = wp.blocks.query.children;
+	children = wp.blocks.source.children;
 
 registerBlockType( 'gutenberg-boilerplate-es5/hello-world-step-04', {
 	title: 'Hello World (Step 4)',
@@ -86,7 +86,7 @@ const {
 	Editable,
 	BlockControls,
 	AlignmentToolbar,
-	query
+	source
 } = wp.blocks;
 const { children } = children;
 

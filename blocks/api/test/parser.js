@@ -6,7 +6,7 @@ import { noop } from 'lodash';
 /**
  * Internal dependencies
  */
-import { text } from '../query';
+import { text } from '../source';
 import {
 	getBlockAttributes,
 	parseBlockAttributes,
@@ -47,10 +47,10 @@ describe( 'block parser', () => {
 			} );
 		} );
 
-		it( 'should use the query object implementation', () => {
+		it( 'should use the sources object implementation', () => {
 			const attributes = {
 				emphasis: text( 'strong' ),
-				ignoredDomMatcher: ( node ) => node.innerHTML,
+				ignoredDomSource: ( node ) => node.innerHTML,
 			};
 
 			const rawContent = '<span>Ribs <strong>& Chicken</strong></span>';
