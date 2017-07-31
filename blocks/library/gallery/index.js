@@ -3,7 +3,6 @@
  */
 import { __ } from 'i18n';
 import { Toolbar, Placeholder } from 'components';
-import { pick } from 'lodash';
 
 /**
  * Internal dependencies
