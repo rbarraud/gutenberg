@@ -16,7 +16,7 @@ import InspectorControls from '../../inspector-controls';
 import ToggleControl from '../../inspector-controls/toggle-control';
 import BlockDescription from '../../block-description';
 
-const { children, query } = hpq;
+const { children } = hpq;
 
 registerBlockType( 'core/text', {
 	title: __( 'Text' ),
@@ -32,7 +32,7 @@ registerBlockType( 'core/text', {
 	className: false,
 
 	attributes: {
-		content: query( 'p', children() ),
+		content: children( 'p' ),
 	},
 
 	transforms: {
@@ -45,7 +45,7 @@ registerBlockType( 'core/text', {
 					! node.querySelector( 'audio, canvas, embed, iframe, img, math, object, svg, video' )
 				),
 				attributes: {
-					content: query( 'p', children() ),
+					content: children( 'p' ),
 				},
 			},
 		],
