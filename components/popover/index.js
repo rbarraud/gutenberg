@@ -14,7 +14,7 @@ import { createPortal, Component } from 'element';
  */
 import './style.scss';
 
-class Popover extends Component {
+export class Popover extends Component {
 	constructor() {
 		super( ...arguments );
 
