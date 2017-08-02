@@ -3,22 +3,22 @@
  */
 import { __ } from '@wordpress/i18n';
 import { concatChildren } from '@wordpress/element';
+import { query as hpq, createBlock } from '@wordpress/blockapi';
 
 /**
  * Internal dependencies
  */
 import './block.scss';
-import { registerBlockType, createBlock, query as hpq, setDefaultBlock } from '../../api';
+import { registerBlockType, setDefaultBlock } from '../../api';
 import AlignmentToolbar from '../../alignment-toolbar';
 import BlockControls from '../../block-controls';
 import Editable from '../../editable';
 import InspectorControls from '../../inspector-controls';
 import ToggleControl from '../../inspector-controls/toggle-control';
 import BlockDescription from '../../block-description';
-
 const { children, query } = hpq;
 
-registerBlockType( 'core/text', {
+const textBlockType = registerBlockType( 'core/text', {
 	title: __( 'Text' ),
 
 	icon: 'text',
@@ -99,7 +99,7 @@ registerBlockType( 'core/text', {
 					setAttributes( { content: before } );
 					insertBlocksAfter( [
 						...blocks,
-						createBlock( 'core/text', { content: after } ),
+						createBlock( textBlockType, { content: after } ),
 					] );
 				} }
 				onMerge={ mergeBlocks }

@@ -5,11 +5,6 @@ import { shallow } from 'enzyme';
 import { noop } from 'lodash';
 
 /**
- * WordPress dependencies
- */
-import { registerBlockType, unregisterBlockType, getBlockTypes } from '@wordpress/blocks';
-
-/**
  * Internal dependencies
  */
 import { InserterMenu, searchBlocks } from '../menu';
@@ -64,33 +59,30 @@ const textEmbedBlock = {
 	category: 'embed',
 };
 
+const editorSettings = {
+	blockTypes: [
+		textBlock,
+		advancedTextBlock,
+		someOtherBlock,
+		moreBlock,
+		youtubeBlock,
+		textEmbedBlock,
+	],
+	categories: [
+		{ slug: 'common', title: 'Common Blocks' },
+		{ slug: 'layout', title: 'Layout Blocks' },
+		{ slug: 'embed', title: 'Embed' },
+	],
+};
+
 describe( 'InserterMenu', () => {
-	const unregisterAllBlocks = () => {
-		getBlockTypes().forEach( ( block ) => {
-			unregisterBlockType( block.name );
-		} );
-	};
-
-	afterEach( () => {
-		unregisterAllBlocks();
-	} );
-
-	beforeEach( () => {
-		unregisterAllBlocks();
-		registerBlockType( textBlock.name, textBlock );
-		registerBlockType( advancedTextBlock.name, advancedTextBlock );
-		registerBlockType( someOtherBlock.name, someOtherBlock );
-		registerBlockType( moreBlock.name, moreBlock );
-		registerBlockType( youtubeBlock.name, youtubeBlock );
-		registerBlockType( textEmbedBlock.name, textEmbedBlock );
-	} );
-
 	it( 'should show the recent tab by default', () => {
 		const wrapper = shallow(
 			<InserterMenu
 				instanceId={ 1 }
 				blocks={ [] }
 				recentlyUsedBlocks={ [] }
+				settings={ editorSettings }
 			/>
 		);
 
@@ -107,6 +99,7 @@ describe( 'InserterMenu', () => {
 				instanceId={ 1 }
 				blocks={ [] }
 				recentlyUsedBlocks={ [ advancedTextBlock ] }
+				settings={ editorSettings }
 			/>
 		);
 
@@ -122,6 +115,7 @@ describe( 'InserterMenu', () => {
 				instanceId={ 1 }
 				blocks={ [] }
 				recentlyUsedBlocks={ [] }
+				settings={ editorSettings }
 			/>
 		);
 		const embedTab = wrapper.find( '.editor-inserter__tab' )
@@ -143,6 +137,7 @@ describe( 'InserterMenu', () => {
 				instanceId={ 1 }
 				blocks={ [] }
 				recentlyUsedBlocks={ [] }
+				settings={ editorSettings }
 			/>
 		);
 		const blocksTab = wrapper.find( '.editor-inserter__tab' )
@@ -166,6 +161,7 @@ describe( 'InserterMenu', () => {
 				instanceId={ 1 }
 				blocks={ [ { name: moreBlock.name } ] }
 				recentlyUsedBlocks={ [] }
+				settings={ editorSettings }
 			/>
 		);
 		const blocksTab = wrapper.find( '.editor-inserter__tab' )
@@ -183,6 +179,7 @@ describe( 'InserterMenu', () => {
 				instanceId={ 1 }
 				blocks={ [] }
 				recentlyUsedBlocks={ [] }
+				settings={ editorSettings }
 			/>
 		);
 		wrapper.setState( { filterValue: 'text' } );
@@ -203,6 +200,7 @@ describe( 'InserterMenu', () => {
 				instanceId={ 1 }
 				blocks={ [] }
 				recentlyUsedBlocks={ [] }
+				settings={ editorSettings }
 			/>
 		);
 		wrapper.setState( { filterValue: ' text' } );

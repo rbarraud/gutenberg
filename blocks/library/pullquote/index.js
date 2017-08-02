@@ -7,13 +7,14 @@ import { isString } from 'lodash';
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
+import { query as hpq } from '@wordpress/blockapi';
 
 /**
  * Internal dependencies
  */
 import './style.scss';
 import './block.scss';
-import { registerBlockType, query as hpq } from '../../api';
+import { registerBlockType } from '../../api';
 import Editable from '../../editable';
 import BlockControls from '../../block-controls';
 import BlockAlignmentToolbar from '../../block-alignment-toolbar';
