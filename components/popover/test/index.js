@@ -1,9 +1,4 @@
 /**
- * External dependencies
- */
-import { shallow } from 'enzyme';
-
-/**
  * Internal dependencies
  */
 import { Popover } from '../';
