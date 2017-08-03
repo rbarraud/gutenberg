@@ -426,7 +426,7 @@ class VisualEditorBlock extends Component {
 						} )
 					) }
 				</div>
-				{ ! isValid && <InvalidBlockWarning /> }
+				{ ! isValid && <InvalidBlockWarning block={ block } /> }
 			</div>
 		);
 		/* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/onclick-has-role, jsx-a11y/click-events-have-key-events */
