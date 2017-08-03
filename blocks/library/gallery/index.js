@@ -147,7 +147,7 @@ registerBlockType( 'core/gallery', {
 					<SelectControl
 						label={ __( 'Link to' ) }
 						selected={ linkto }
-						onBlur={ setLinkto }
+						onChange={ setLinkto }
 						options={ linkOptions }
 					/>
 					<RangeControl
