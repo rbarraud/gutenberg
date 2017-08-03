@@ -16,7 +16,7 @@ import { addQueryArgs } from 'editor/utils/url';
  * Internal dependencies
  */
 import './style.scss';
-import { registerBlockType, query } from '../../api';
+import { registerBlockType, query, createBlock } from '../../api';
 import Editable from '../../editable';
 import BlockControls from '../../block-controls';
 import BlockAlignmentToolbar from '../../block-alignment-toolbar';
@@ -26,7 +26,7 @@ const { attr, children } = query;
 // These embeds do not work in sandboxes
 const HOSTS_NO_PREVIEWS = [ 'facebook.com' ];
 
-function getEmbedBlockSettings( { title, icon, category = 'embed' } ) {
+function getEmbedBlockSettings( { title, icon, category = 'embed', matchers = [], name } ) {
 	return {
 		title: __( title ),
 
@@ -37,6 +37,18 @@ function getEmbedBlockSettings( { title, icon, category = 'embed' } ) {
 		attributes: {
 			title: attr( 'iframe', 'title' ),
 			caption: children( 'figcaption' ),
+		},
+
+		transforms: {
+			from: matchers.map( ( regExp ) => ( {
+				type: 'pattern',
+				regExp,
+				transform: ( { match } ) => {
+					return createBlock( name, {
+						url: match[ 1 ],
+					} );
+				},
+			} ) ),
 		},
 
 		getEditWrapperProps( attributes ) {
@@ -458,5 +470,11 @@ registerBlockType(
 	getEmbedBlockSettings( {
 		title: 'YouTube',
 		icon: 'video-alt3',
+		name: 'core-embed/youtube',
+		matchers: [
+			/^\s*(https?:\/\/(?:m\.|www\.)?youtube\.com\/watch\S+)\s*/i,
+			/^\s*(https?:\/\/(?:m\.|www\.)?youtube\.com\/playlist\S+)\s*/i,
+			/^\s*(https?:\/\/youtu\.be\/\S+)\s*/i,
+		],
 	} )
 );
