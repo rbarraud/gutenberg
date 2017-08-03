@@ -17,7 +17,6 @@ import {
 	registerBlockType,
 	unregisterBlockType,
 	getBlockTypes,
-	getBlockType,
 	setUnknownTypeHandler,
 } from '../registration';
 
