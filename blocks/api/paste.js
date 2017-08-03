@@ -12,7 +12,7 @@ import { nodetypes } from '@wordpress/utils';
  * Internal dependencies
  */
 import { createBlock } from './factory';
-import { getBlockTypes, getUnknownTypeHandler } from './registration';
+import { getBlockTypes, getUnknownTypeHandlerName } from './registration';
 import { parseBlockAttributes } from './parser';
 import convertTables from './paste/convert-tables';
 import stripAttributes from './paste/strip-attributes';
@@ -105,7 +105,7 @@ export default function( nodes ) {
 			return block;
 		}
 
-		return createBlock( getUnknownTypeHandler(), {
+		return createBlock( getUnknownTypeHandlerName(), {
 			content: node.outerHTML,
 		} );
 	} );

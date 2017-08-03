@@ -19,7 +19,7 @@ import {
 	unregisterBlockType,
 	getBlockTypes,
 	getBlockType,
-	setUnknownTypeHandler,
+	setUnknownTypeHandlerName,
 } from '../registration';
 
 describe( 'block parser', () => {
@@ -28,7 +28,7 @@ describe( 'block parser', () => {
 	};
 
 	afterEach( () => {
-		setUnknownTypeHandler( undefined );
+		setUnknownTypeHandlerName( undefined );
 		getBlockTypes().forEach( ( block ) => {
 			unregisterBlockType( block.name );
 		} );
@@ -138,7 +138,7 @@ describe( 'block parser', () => {
 
 		it( 'should fall back to the unknown type handler for unknown blocks if present', () => {
 			registerBlockType( 'core/unknown-block', defaultBlockSettings );
-			setUnknownTypeHandler( 'core/unknown-block' );
+			setUnknownTypeHandlerName( 'core/unknown-block' );
 
 			const block = createBlockWithFallback(
 				'core/test-block',
@@ -151,7 +151,7 @@ describe( 'block parser', () => {
 
 		it( 'should fall back to the unknown type handler if block type not specified', () => {
 			registerBlockType( 'core/unknown-block', defaultBlockSettings );
-			setUnknownTypeHandler( 'core/unknown-block' );
+			setUnknownTypeHandlerName( 'core/unknown-block' );
 
 			const block = createBlockWithFallback( null, 'content' );
 			expect( block.name ).toEqual( 'core/unknown-block' );
@@ -227,7 +227,7 @@ describe( 'block parser', () => {
 			registerBlockType( 'core/test-block', defaultBlockSettings );
 			registerBlockType( 'core/unknown-block', defaultBlockSettings );
 
-			setUnknownTypeHandler( 'core/unknown-block' );
+			setUnknownTypeHandlerName( 'core/unknown-block' );
 
 			const parsed = parse(
 				'<!-- wp:core/test-block -->Ribs<!-- /wp:core/test-block -->' +
@@ -255,7 +255,7 @@ describe( 'block parser', () => {
 				save: noop,
 			} );
 
-			setUnknownTypeHandler( 'core/unknown-block' );
+			setUnknownTypeHandlerName( 'core/unknown-block' );
 
 			const parsed = parse(
 				'<p>Cauliflower</p>' +

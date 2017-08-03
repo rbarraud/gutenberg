@@ -8,7 +8,7 @@ import { pickBy } from 'lodash';
  * Internal dependencies
  */
 import { parse as grammarParse } from './post.pegjs';
-import { getBlockType, getUnknownTypeHandler } from './registration';
+import { getBlockType, getUnknownTypeHandlerName } from './registration';
 import { createBlock } from './factory';
 import { getBeautifulContent, getSaveContent } from './serializer';
 
@@ -70,11 +70,11 @@ export function getBlockAttributes( blockType, rawContent, attributes ) {
  */
 export function createBlockWithFallback( name, rawContent, attributes ) {
 	// Use type from block content, otherwise find unknown handler.
-	name = name || getUnknownTypeHandler();
+	name = name || getUnknownTypeHandlerName();
 
 	// Try finding type for known block name, else fall back again.
 	let blockType = getBlockType( name );
-	const fallbackBlock = getUnknownTypeHandler();
+	const fallbackBlock = getUnknownTypeHandlerName();
 	if ( ! blockType ) {
 		name = fallbackBlock;
 		blockType = getBlockType( name );
