@@ -8,7 +8,7 @@ import { isString, isObject } from 'lodash';
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { Toolbar } from '@wordpress/components';
-import { query as hpq } from '@wordpress/blockapi';
+import { query as hpq } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

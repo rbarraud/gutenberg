@@ -7,7 +7,7 @@ import { isString } from 'lodash';
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { query as hpq } from '@wordpress/blockapi';
+import { query as hpq } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

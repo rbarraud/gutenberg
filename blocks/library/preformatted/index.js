@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { query } from '@wordpress/blockapi';
+import { query } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

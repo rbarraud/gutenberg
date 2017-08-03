@@ -3,7 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { IconButton } from '@wordpress/components';
-import { query } from '@wordpress/blockapi';
+import { query } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

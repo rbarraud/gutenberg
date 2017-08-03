@@ -12,7 +12,7 @@ import { __ } from '@wordpress/i18n';
 import { Component } from '@wordpress/element';
 import { Dashicon, IconButton } from '@wordpress/components';
 import { withEditorSettings } from '@wordpress/blocks';
-import { switchToBlockType, getBlockType } from '@wordpress/blockapi';
+import { switchToBlockType, getBlockType } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

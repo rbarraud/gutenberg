@@ -134,7 +134,7 @@ function gutenberg_register_scripts_and_styles() {
 	);
 	wp_register_script(
 		'wp-blocks-api',
-		gutenberg_url( 'blockapi/build/index.js' ),
+		gutenberg_url( 'block-api/build/index.js' ),
 		array( 'wp-element', 'wp-utils' ),
 		filemtime( gutenberg_dir_path() . 'blocks/build/index.js' )
 	);

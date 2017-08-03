@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import { __ } from '@wordpress/i18n';
 import { Component } from '@wordpress/element';
 import { IconButton } from '@wordpress/components';
-import { createBlock, getBlockType } from '@wordpress/blockapi';
+import { createBlock, getBlockType } from '@wordpress/block-api';
 import { withEditorSettings } from '@wordpress/blocks';
 
 /**

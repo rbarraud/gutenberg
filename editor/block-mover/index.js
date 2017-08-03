@@ -9,7 +9,7 @@ import { first, last } from 'lodash';
  */
 import { IconButton } from '@wordpress/components';
 import { withEditorSettings } from '@wordpress/blocks';
-import { getBlockType } from '@wordpress/blockapi';
+import { getBlockType } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

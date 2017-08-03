@@ -12,7 +12,7 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
  */
 import { Children, Component } from '@wordpress/element';
 import { IconButton, Toolbar } from '@wordpress/components';
-import { getBlockDefaultClassname, getBlockType } from '@wordpress/blockapi';
+import { getBlockDefaultClassname, getBlockType } from '@wordpress/block-api';
 import { withEditorSettings } from '@wordpress/blocks';
 import { keycodes } from '@wordpress/utils';
 import { __, sprintf } from '@wordpress/i18n';

@@ -8,7 +8,7 @@ import classnames from 'classnames';
  */
 import { __ } from '@wordpress/i18n';
 import { Placeholder, Dashicon, Toolbar, DropZone } from '@wordpress/components';
-import { query } from '@wordpress/blockapi';
+import { query } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

@@ -10,7 +10,7 @@ import { throttle, reduce, noop } from 'lodash';
  */
 import { __ } from '@wordpress/i18n';
 import { Component } from '@wordpress/element';
-import { serialize, createBlock, getBlockType } from '@wordpress/blockapi';
+import { serialize, createBlock, getBlockType } from '@wordpress/block-api';
 import { withEditorSettings } from '@wordpress/blocks';
 import { IconButton } from '@wordpress/components';
 import { keycodes } from '@wordpress/utils';

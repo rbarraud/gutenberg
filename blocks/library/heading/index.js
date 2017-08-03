@@ -9,7 +9,7 @@ import { isObject } from 'lodash';
 import { __, sprintf } from '@wordpress/i18n';
 import { concatChildren } from '@wordpress/element';
 import { Toolbar } from '@wordpress/components';
-import { query } from '@wordpress/blockapi';
+import { query } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

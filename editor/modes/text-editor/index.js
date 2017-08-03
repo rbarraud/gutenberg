@@ -8,7 +8,7 @@ import Textarea from 'react-autosize-textarea';
  * WordPress dependencies
  */
 import { Component } from '@wordpress/element';
-import { serialize, parse } from '@wordpress/blockapi';
+import { serialize, parse } from '@wordpress/block-api';
 import { withEditorSettings } from '@wordpress/blocks';
 
 /**

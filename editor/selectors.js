@@ -8,7 +8,7 @@ import createSelector from 'rememo';
 /**
  * WordPress dependencies
  */
-import { getBlockType } from '@wordpress/blockapi';
+import { getBlockType } from '@wordpress/block-api';
 import { __ } from '@wordpress/i18n';
 
 /**

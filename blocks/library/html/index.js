@@ -8,7 +8,7 @@ import TextareaAutosize from 'react-autosize-textarea';
  */
 import { __ } from '@wordpress/i18n';
 import { Component } from '@wordpress/element';
-import { query } from '@wordpress/blockapi';
+import { query } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

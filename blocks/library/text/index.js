@@ -3,7 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { concatChildren } from '@wordpress/element';
-import { query as hpq, createBlock } from '@wordpress/blockapi';
+import { query as hpq, createBlock } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

@@ -11,7 +11,7 @@ import 'moment-timezone/moment-timezone-utils';
  * WordPress dependencies
  */
 import { EditableProvider, getBlockTypes, getUnknownTypeHandler, getDefaultBlock, getCategories } from '@wordpress/blocks';
-import { parse } from '@wordpress/blockapi';
+import { parse } from '@wordpress/block-api';
 import { render } from '@wordpress/element';
 import { settings as dateSettings } from '@wordpress/date';
 

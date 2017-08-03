@@ -8,7 +8,7 @@ import { find } from 'lodash';
  */
 import { Component, createElement, Children, concatChildren } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { query as hpq } from '@wordpress/blockapi';
+import { query as hpq } from '@wordpress/block-api';
 
 /**
  * Internal dependencies

@@ -22,7 +22,7 @@ import 'element-closest';
  * WordPress dependencies
  */
 import { createElement, Component, renderToString } from '@wordpress/element';
-import { parse, pasteHandler } from '@wordpress/blockapi';
+import { parse, pasteHandler } from '@wordpress/block-api';
 import { keycodes } from '@wordpress/utils';
 
 /**

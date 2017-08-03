@@ -9,7 +9,7 @@ import { format } from 'util';
 /**
  * Internal dependencies
  */
-import { parse, serialize, grammarParse } from '@wordpress/blockapi';
+import { parse, serialize, grammarParse } from '@wordpress/block-api';
 import { getBlockTypes } from '../api/registration';
 
 // This import registers the blocks
