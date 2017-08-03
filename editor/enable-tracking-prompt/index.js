@@ -8,12 +8,12 @@ import { connect } from 'react-redux';
  */
 import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
+import { bumpStat } from '@wordpress/utils';
 
 /**
  * Internal dependencies
  */
 import './style.scss';
-import { bumpStat } from '../utils/tracking';
 import { removeNotice } from '../actions';
 
 export const TRACKING_PROMPT_NOTICE_ID = 'notice:enable-tracking-prompt';
@@ -25,7 +25,7 @@ export function EnableTrackingPrompt( props ) {
 			enableTracking ? 'on' : 'off'
 		);
 		if ( enableTracking ) {
-			bumpStat( 'tracking', 'opt-in' );
+			props.bumpStat( 'tracking', 'opt-in' );
 		}
 		props.removeNotice( TRACKING_PROMPT_NOTICE_ID );
 	}
@@ -59,7 +59,10 @@ export function EnableTrackingPrompt( props ) {
 }
 
 export default connect(
-	undefined,
+	( state ) => { // eslint-disable-line no-unused-vars
+		return {
+			bumpStat,
+		};
+	},
 	{ removeNotice }
 )( EnableTrackingPrompt );
-
